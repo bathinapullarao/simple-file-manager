@@ -10,7 +10,7 @@ stage('gitCheckout')
     	}
 stage('Deploy')
 	{
-	sh 'cp -r $WORKSPACE/* /var/www/html/'	
+	sh 'cp -R $WORKSPACE/* /var/www/html/'	
 	}
 	
 }
