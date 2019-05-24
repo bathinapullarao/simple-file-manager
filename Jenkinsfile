@@ -1,10 +1,13 @@
-def server_id=Server
-pipeline {
-          stages {
-		         stage ('checkout') {
-			                     steps {
-				                    checkout scm
-				                   }
-		                             }
-                        }
-           }
+node 
+{
+	/*stage('declareEnvVariables')
+	{
+        def dockerHome = tool 'myDocker'
+        def mavenHome  = tool 'myMaven'
+        env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
+        }*/
+stage('gitCheckout') 
+	{
+        checkout scm
+    	}
+}
