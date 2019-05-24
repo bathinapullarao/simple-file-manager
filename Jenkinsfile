@@ -1,15 +1,10 @@
 def server_id=Server
 pipeline {
-          agent {
-		 label 'master'
-	        }
-	        stages {
+          stages {
 		         stage ('checkout') {
 			                     steps {
-				                    node ('master') {
-					                             checkout scm
-				                                    }
-			                            }
+				                    checkout scm
+				                   }
 		                             }
                         }
            }
