@@ -1,13 +1,16 @@
 node 
 {
-	/*stage('declareEnvVariables')
+	stage('declareEnvVariables')
 	{
-        def dockerHome = tool 'myDocker'
-        def mavenHome  = tool 'myMaven'
-        env.PATH = "${dockerHome}/bin:${mavenHome}/bin:${env.PATH}"
-        }*/
+        def WORKSPACE = "/var/lib/jenkins/workspace/phpProject_cicd"
+        }
 stage('gitCheckout') 
 	{
         checkout scm
     	}
+stage('Deploy')
+	{
+	sh 'cp -r $WORKSPACE/* /var/www/html/'	
+	}
+	
 }
