@@ -12,5 +12,9 @@ stage('Deploy')
 	{
 	sh 'cp -R $WORKSPACE/* /var/www/html/'	
 	}
+stage('restart_apache')
+	{
+	sh 'systemctl restart httpd'	
+	}
 	
 }
