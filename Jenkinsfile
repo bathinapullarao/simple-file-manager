@@ -2,7 +2,7 @@ node
 {
 	stage('declareEnvVariables')
 	{
-        def WORKSPACE = "/var/lib/jenkins/workspace/phpProject_cicd"
+       // def WORKSPACE = "/var/lib/jenkins/workspace/phpProject_cicd"
         }
 stage('gitCheckout') 
 	{
